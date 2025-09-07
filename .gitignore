@@ -30,4 +30,5 @@ uploads/
 .DS_Store
 Thumbs.db
 
+# Python Packaging / Build Artifacts
 *.egg-info/
