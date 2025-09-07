@@ -87,4 +87,4 @@ Simple web interface (`frontend/`) with:
 The system automatically loads course materials from the `docs/` directory on startup.
 - Always use UV to run the server, do not use pip directly
 - Make sure to use UV to manage all dependencies.
-- use uv to run python files
+- Use uv to run python files
