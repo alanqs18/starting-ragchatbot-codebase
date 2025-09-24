@@ -245,6 +245,23 @@ header h1 {
     color: var(--text-secondary);
 }
 
+.source-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: all 0.2s ease;
+}
+
+.source-link:hover {
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.source-text {
+    color: var(--text-secondary);
+}
+
 /* Markdown formatting styles */
 .message-content h1,
 .message-content h2,
@@ -462,6 +479,36 @@ header h1 {
     letter-spacing: 0.5px;
 }
 
+/* New Chat Button */
+.new-chat-button {
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: none;
+    border-radius: 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.new-chat-button:hover {
+    background: var(--surface-hover);
+    color: var(--primary-color);
+    transform: translateX(2px);
+}
+
+.new-chat-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.new-chat-button:active {
+    transform: translateX(0);
+}
+
 .stats-header:focus,
 .suggested-header:focus {
     color: var(--primary-color);
@@ -614,7 +661,7 @@ details[open] .suggested-header::before {
     background: var(--background);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.2s ease;
