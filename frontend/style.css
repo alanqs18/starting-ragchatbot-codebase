@@ -245,16 +245,19 @@ header h1 {
     color: var(--text-secondary);
 }
 
-.source-link {
-    color: var(--primary-color);
+.source-link,
+.sources-content a {
+    color: #3b82f6 !important;
     text-decoration: none;
     border-bottom: 1px dotted transparent;
     transition: all 0.2s ease;
+    font-weight: 500;
 }
 
-.source-link:hover {
-    color: var(--primary-hover);
-    border-bottom-color: var(--primary-hover);
+.source-link:hover,
+.sources-content a:hover {
+    color: #2563eb !important;
+    border-bottom-color: #2563eb;
     text-decoration: underline;
 }
 
@@ -271,6 +274,21 @@ header h1 {
 .message-content h6 {
     margin: 0.5rem 0;
     font-weight: 600;
+}
+
+/* Ensure all links in message content use consistent styling */
+.message-content a {
+    color: #3b82f6 !important;
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.message-content a:hover {
+    color: #2563eb !important;
+    border-bottom-color: #2563eb;
+    text-decoration: underline;
 }
 
 .message-content h1 { font-size: 1.5rem; }

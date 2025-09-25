@@ -131,7 +131,7 @@ function addMessage(content, type, sources = null, isWelcome = false) {
         const formattedSources = sources.map(source => {
             // Parse markdown links to HTML
             return marked.parse(source);
-        }).join(', ');
+        }).join('<br>');
 
         html += `
             <details class="sources-collapsible">
