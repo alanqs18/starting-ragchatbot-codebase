@@ -127,10 +127,22 @@ function addMessage(content, type, sources = null, isWelcome = false) {
     let html = `<div class="message-content">${displayContent}</div>`;
     
     if (sources && sources.length > 0) {
+        const formattedSources = sources.map(source => {
+            // Check if source contains a link (format: "Course - Lesson X|link")
+            const pipeIndex = source.indexOf('|');
+            if (pipeIndex !== -1) {
+                const text = source.substring(0, pipeIndex);
+                const link = source.substring(pipeIndex + 1);
+                return `<a href="${link}" target="_blank" class="source-link">${text}</a>`;
+            } else {
+                return `<span class="source-text">${source}</span>`;
+            }
+        }).join(', ');
+
         html += `
             <details class="sources-collapsible">
                 <summary class="sources-header">Sources</summary>
-                <div class="sources-content">${sources.join(', ')}</div>
+                <div class="sources-content">${formattedSources}</div>
             </details>
         `;
     }
