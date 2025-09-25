@@ -127,16 +127,10 @@ function addMessage(content, type, sources = null, isWelcome = false) {
     let html = `<div class="message-content">${displayContent}</div>`;
     
     if (sources && sources.length > 0) {
+        // Sources are now in markdown format, use marked to parse them
         const formattedSources = sources.map(source => {
-            // Check if source contains a link (format: "Course - Lesson X|link")
-            const pipeIndex = source.indexOf('|');
-            if (pipeIndex !== -1) {
-                const text = source.substring(0, pipeIndex);
-                const link = source.substring(pipeIndex + 1);
-                return `<a href="${link}" target="_blank" class="source-link">${text}</a>`;
-            } else {
-                return `<span class="source-text">${source}</span>`;
-            }
+            // Parse markdown links to HTML
+            return marked.parse(source);
         }).join(', ');
 
         html += `

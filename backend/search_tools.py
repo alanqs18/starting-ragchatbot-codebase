@@ -106,7 +106,11 @@ class CourseSearchTool(Tool):
                 lesson_link = self.store.get_lesson_link(course_title, lesson_num)
 
             if lesson_link:
-                source = f"{course_title} - Lesson {lesson_num}|{lesson_link}"
+                # Create markdown format link: [text](url)
+                if lesson_num is not None:
+                    source = f"[{course_title} - Lesson {lesson_num}]({lesson_link})"
+                else:
+                    source = f"[{course_title}]({lesson_link})"
             else:
                 source = course_title
                 if lesson_num is not None:
